@@ -4,38 +4,62 @@ import java.util.Random;
 
 public class Prodotto {
 
-	int codice;
-	String nome, descrizione;
-	float prezzo, iva;
+	private int codice;
+	private String nome, marca;
+	private float prezzo, iva;
 
-	public Prodotto(String nome, String descrizione, float prezzo, float iva) {
+	public Prodotto(String nome, String marca, float prezzo, float iva) {
 		super();
 		Random r = new Random();
 		codice = r.nextInt(1000);
 		this.nome = nome;
-		this.descrizione = descrizione;
+		this.marca = marca;
 		this.prezzo = prezzo;
 		this.iva = iva;
 	}
 
-	float prezzoBase() {
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public float getPrezzo() {
 		return prezzo;
 	}
 
-	float prezzoIva() {
+	public void setPrezzo(float prezzo) {
+		this.prezzo = prezzo;
+	}
+
+	public float getIva() {
+		return iva;
+	}
+
+	public void setIva(float iva) {
+		this.iva = iva;
+	}
+
+	
+	public float getPrezzoIva() {
 		float prezzoIva = prezzo + (prezzo * iva / 100);
 		return prezzoIva;
-
 	}
 
-	String nomeEsteso() {
-		String nomeEsteso = nome +"-"+ codice;
-		return nomeEsteso;
+	public int getCodice() {
+		return codice;
 	}
 
-	String codiceBonus() {
-		// inserisce al massimo con 8 zeri
-		return String.format("%08d", codice);
-	}
+
 
 }
