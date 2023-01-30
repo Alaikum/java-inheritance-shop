@@ -23,6 +23,8 @@ public class Cuffia extends Prodotto {
 		this.wireless = wireless;
 	}
 	
+	
+	@Override
 	public String toString() {
 
 		String dati = super.toString();
