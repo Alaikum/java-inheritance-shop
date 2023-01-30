@@ -1,10 +1,10 @@
 package org.lessons.java.shop;
 
-public class Cuffie extends Prodotto {
+public class Cuffia extends Prodotto {
 
 	private String colore;
 	private boolean wireless;
-	public Cuffie(String nome, String marca, float prezzo, float iva, String colore, boolean wireless) {
+	public Cuffia(String nome, String marca, float prezzo, float iva, String colore, boolean wireless) {
 		super(nome, marca, prezzo, iva);
 		this.colore = colore;
 		this.wireless = wireless;
@@ -23,5 +23,12 @@ public class Cuffie extends Prodotto {
 		this.wireless = wireless;
 	}
 	
+	public String toString() {
+
+		String dati = super.toString();
+		dati = dati + "\nLa tua cuffia ha anche queste qualità\nColore: "+getColore()
+		+ "\nOpzione Wireless: " + isWireless();;
+		return dati;
+	}
 	
 }

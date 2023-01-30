@@ -50,7 +50,6 @@ public class Prodotto {
 		this.iva = iva;
 	}
 
-	
 	public float getPrezzoIva() {
 		float prezzoIva = prezzo + (prezzo * iva / 100);
 		return prezzoIva;
@@ -60,6 +59,11 @@ public class Prodotto {
 		return codice;
 	}
 
-
+	public String toString() {
+		String dati = "Eccoci qui i dati del tuo Prodotto:"
+				+ "\nNome: "+getNome()+"\nMarca: "+getMarca()+"\nPrezzo: "+getPrezzo()+"€\nIva:"+getIva()
+				+"%\nPrezzo con Iva: "+getPrezzoIva()+"€";
+		return dati;
+	}
 
 }

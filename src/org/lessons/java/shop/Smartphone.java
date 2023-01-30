@@ -3,7 +3,7 @@ package org.lessons.java.shop;
 public class Smartphone extends Prodotto {
 
 	private float memory;
-	private long imei;	
+	private long imei;
 
 	public Smartphone(String nome, String marca, float prezzo, float iva, float memory, long imei) {
 		super(nome, marca, prezzo, iva);
@@ -15,11 +15,10 @@ public class Smartphone extends Prodotto {
 		return memory;
 	}
 
-	
 	public void setMemory(float memory) {
 		this.memory = memory;
 	}
-	
+
 	public long getImei() {
 		return imei;
 	}
@@ -27,6 +26,12 @@ public class Smartphone extends Prodotto {
 	public void setImei(long imei) {
 		this.imei = imei;
 	}
-	
+
+	@Override
+	public String toString() {
+		String dati = super.toString();
+		dati = dati + "\nLo Smartphone ha anche queste qualità \nMemoria "+getMemory()+" MB\nCodice IMEI: "+getImei();
+		return dati;
+	}
 
 }
